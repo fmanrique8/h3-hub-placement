@@ -1,6 +1,6 @@
 # How much does an H3 grid change where you put a warehouse?
 
-In a Madison road-time model, fixed H3 and direct enumeration both found the same hubs in about **0.6 seconds** with 24 candidates. With 76 candidates, fixed H3 still picked the exact hubs and took **1.78 seconds** compared with **6.76 seconds** for enumerating 70,300 triples. [Companion article on fmanrique.com](https://fmanrique.com/blog/h3-warehouse-placement/) · [Robustness results](ROBUSTNESS-RESULTS.md)
+In a Madison road-time model, fixed and spread-based H3 selected the same sites at both bucket budgets, including after perturbing candidate locations and road speeds. At 76 candidates, the finer fixed grid matched the exact plan in all three runs of a separate Windows comparison. Routing-inclusive medians were **1.65 s** for fixed H3, **4.15 s** for vectorized exact enumeration, and **5.96 s** for the simple exact loop. [Companion article on fmanrique.com](https://fmanrique.com/blog/h3-warehouse-placement/) · [Road results and timing protocol](ROBUSTNESS-RESULTS.md#stronger-exact-baseline)
 
 At **23 buckets**, fixed H3 moved one of three hubs and increased demand-weighted distance by **14.77%** in the constructed split-cell case with seed 271. Spreadsheet-sized inputs make the difference easy to inspect. Fixed H3 chose `Middle` in place of `West`, raising cost from **2,328.46 to 2,672.34 demand-unit km** while reducing weighted p95 from **6.96 to 4.95 km**. Spread-based adaptive H3 recovered the raw-demand plan at the same count.
 
@@ -34,6 +34,14 @@ uv run --locked python -m hub_placement.figures
 
 The last command regenerates the [runtime chart](figures/runtime-cost.png), [annotated failure map](figures/split-cell.png), [static comparison](figures/comparison.png), the interactive map data, and the results CSV from the recorded file. Pass `--input outputs/benchmark-rerun.json --figures rerun-figures` to plot a fresh run while retaining the recorded figures. Use `--site-assets <directory>` to export the same figure set, full data, and CSV for the local article. The interactive data carries a SHA-256 of its source benchmark. Timings vary between runs.
 
+To reproduce the three-way comparison on the pinned Madison road inputs:
+
+```sh
+uv run --locked python -m hub_placement.exact_baselines --fetch --output outputs/exact-baselines-rerun.json
+```
+
+The tests and benchmark commands exit `0` on success. The road run verifies the input SHA-256 digests before timing and fails if the exact objectives disagree.
+
 ## Methods and checks
 
 - **Objective.** Minimize the sum of demand weights times distance to the nearest selected facility. Binary variables open sites, while continuous assignments can only go to an open site. For a chosen set of sites, each demand row's least-cost assignment is to a nearest site. HiGHS uses a 20 s solve limit, a relative gap target of `1e-6`, one thread, presolve, and random seed 0. Gaps and dual bounds describe the model passed to the solver. The re-score evaluates the selected hubs on the original points. [p-median formulation](https://kar.kent.ac.uk/38849/1/EJOR%28Chandra-Said-Paola-2014%29.pdf) · [SciPy MILP](https://docs.scipy.org/doc/scipy-1.15.3/reference/generated/scipy.optimize.milp.html)
@@ -43,3 +51,5 @@ The last command regenerates the [runtime chart](figures/runtime-cost.png), [ann
 - **Checks.** A five-point, four-candidate instance enumerates all six two-hub subsets. Enumeration and MILP both select candidate indices 1 and 3 with objective 22. The tests also check exact bucket budgets, weight and weighted-centroid conservation, weighted p95, deterministic fixtures, and re-score every stored plan directly on its source rows.
 
 See [data and ZIP handling](DATA.md), [bibliography](BIBLIOGRAPHY.md), [citation metadata](CITATION.cff), and the [visual audit](VISUAL-AUDIT.md).
+
+Source code is available under the [MIT License](LICENSE). [DATA.md](DATA.md) records the separate terms for fixtures, figures, and public inputs.

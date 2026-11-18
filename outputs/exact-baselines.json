@@ -1,0 +1,264 @@
+{
+  "study": "madison-denser-exact-baselines-v1",
+  "recorded_utc": "2026-11-18T01:06:27.408034+00:00",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "cpu": "Intel(R) Core(TM) i7-8750H CPU @ 2.20GHz",
+    "python": "3.12.13",
+    "h3_core": "4.3.0",
+    "packages": {
+      "h3": "4.3.1",
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "pyshp": "2.3.1",
+      "threadpoolctl": "3.6.0"
+    },
+    "threadpools": [
+      {
+        "internal_api": "openblas",
+        "version": "0.3.29",
+        "num_threads": 1
+      },
+      {
+        "internal_api": "openblas",
+        "version": "0.3.28",
+        "num_threads": 1
+      },
+      {
+        "internal_api": "openmp",
+        "version": null,
+        "num_threads": 12
+      }
+    ]
+  },
+  "sources": {
+    "dane-edges.zip": {
+      "url": "https://www2.census.gov/geo/tiger/TIGER2024/EDGES/tl_2024_55025_edges.zip",
+      "sha256": "aff85a68f02a16867519a1af8e7311383e20c8c5449d2e391241178240afdf9f",
+      "bytes": 8292527
+    },
+    "dane-blocks.json": {
+      "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/10/query?f=json&where=STATE%3D%2755%27%20AND%20COUNTY%3D%27025%27%20AND%20POP100%3E0&geometry=-89.54%2C43.00%2C-89.28%2C43.16&geometryType=esriGeometryEnvelope&inSR=4326&outFields=GEOID%2CINTPTLAT%2CINTPTLON%2CPOP100&returnGeometry=false&orderByFields=GEOID",
+      "sha256": "3ed3ed3d70e5673a351e40807726a37a0ebbb480bb4a3a639b55993e79f6219a",
+      "bytes": 377454
+    }
+  },
+  "grid_size": 9,
+  "k": 3,
+  "candidates": 76,
+  "blocks": 3473,
+  "population": 326762,
+  "candidate_triples": 70300,
+  "road_speeds_kph": {
+    "S1100": 90,
+    "S1200": 60,
+    "S1400": 35,
+    "S1630": 40,
+    "S1640": 25
+  },
+  "connector_speed_kph": 20,
+  "fixed_h3_resolution": 7,
+  "fixed_h3_buckets": 83,
+  "solver_options": {
+    "time_limit": 20.0,
+    "mip_rel_gap": 1e-06,
+    "threads": 1,
+    "random_seed": 0,
+    "presolve": true
+  },
+  "ingestion_seconds_excluded": 9.522911899955943,
+  "repeats": [
+    {
+      "order": [
+        "fixed_h3",
+        "simple_exact",
+        "vectorized_exact"
+      ],
+      "graph_routing_seconds": 1.5218930998817086,
+      "original_point_lookup_seconds": 0.009137299843132496,
+      "methods": {
+        "fixed_h3": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "mean_minutes": 6.625980950300299,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "solver_status": 0,
+          "model_dual_bound": 2090719.5899344294,
+          "method_seconds": 0.24993939977139235,
+          "routing_inclusive_seconds": 1.7809697994962335,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        },
+        "simple_exact": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "method_seconds": 4.406440600054339,
+          "routing_inclusive_seconds": 5.93747099977918,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        },
+        "vectorized_exact": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "method_seconds": 2.8732477000448853,
+          "routing_inclusive_seconds": 4.404278099769726,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        }
+      }
+    },
+    {
+      "order": [
+        "simple_exact",
+        "vectorized_exact",
+        "fixed_h3"
+      ],
+      "graph_routing_seconds": 1.394932399969548,
+      "original_point_lookup_seconds": 0.008259200025349855,
+      "methods": {
+        "simple_exact": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "method_seconds": 4.55594230000861,
+          "routing_inclusive_seconds": 5.959133900003508,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        },
+        "vectorized_exact": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "method_seconds": 2.744040299905464,
+          "routing_inclusive_seconds": 4.147231899900362,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        },
+        "fixed_h3": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "mean_minutes": 6.625980950300299,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "solver_status": 0,
+          "model_dual_bound": 2090719.5899344294,
+          "method_seconds": 0.2417606001254171,
+          "routing_inclusive_seconds": 1.644952200120315,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        }
+      }
+    },
+    {
+      "order": [
+        "vectorized_exact",
+        "fixed_h3",
+        "simple_exact"
+      ],
+      "graph_routing_seconds": 1.4064972999040037,
+      "original_point_lookup_seconds": 0.008545400109142065,
+      "methods": {
+        "vectorized_exact": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "method_seconds": 2.6154628000222147,
+          "routing_inclusive_seconds": 4.0305055000353605,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        },
+        "fixed_h3": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "mean_minutes": 6.625980950300299,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "solver_status": 0,
+          "model_dual_bound": 2090719.5899344294,
+          "method_seconds": 0.2351921999361366,
+          "routing_inclusive_seconds": 1.6502348999492824,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        },
+        "simple_exact": {
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "cost_resident_minutes": 2165118.7872820264,
+          "p95_minutes": 13.277942984367556,
+          "solver_gap": 0.0,
+          "method_seconds": 4.8714618999511,
+          "routing_inclusive_seconds": 6.286504599964246,
+          "cost_excess_pct": 0.0,
+          "same_objective_as_exact": true,
+          "same_hubs_as_exact": true
+        }
+      }
+    }
+  ],
+  "medians": {
+    "fixed_h3": {
+      "method_seconds": 0.2417606001254171,
+      "routing_inclusive_seconds": 1.6502348999492824
+    },
+    "simple_exact": {
+      "method_seconds": 4.55594230000861,
+      "routing_inclusive_seconds": 5.959133900003508
+    },
+    "vectorized_exact": {
+      "method_seconds": 2.744040299905464,
+      "routing_inclusive_seconds": 4.147231899900362
+    }
+  }
+}

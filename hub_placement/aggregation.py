@@ -35,7 +35,7 @@ def summarize_group(points, weights, members):
     weighted = weights[members]
     center = np.average(coordinates, weights=weighted, axis=0)
     spread = weighted @ np.linalg.norm(coordinates - center, axis=1)
-    return center, int(weighted.sum()), float(spread)
+    return center, weighted.sum().item(), float(spread)
 
 
 def summarize(points, weights, labels, groups) -> Buckets:

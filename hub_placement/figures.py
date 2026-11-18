@@ -45,7 +45,8 @@ def chart(cases, highlighted, path):
     ax.grid(axis="y", color=LINE, zorder=0)
     ax.axhline(0, color="#6c737d", lw=0.9)
     ax.spines[["top", "right"]].set_visible(False)
-    ax.legend(loc="upper left", frameon=False, ncols=2, fontsize=9)
+    handles, labels = ax.get_legend_handles_labels()
+    fig.legend(handles, labels, loc="outside lower center", frameon=False, ncols=3, fontsize=8)
     fig.savefig(path, dpi=180, facecolor=PAPER)
     plt.close(fig)
 

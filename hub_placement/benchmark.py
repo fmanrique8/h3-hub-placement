@@ -39,7 +39,8 @@ def evaluate_case(case, methods=METHODS):
         solved = perf_counter()
         cost, p95 = score_plan(case.demand, case.weights, case.candidates, solution.hubs)
         finished = perf_counter()
-        if buckets.weights.sum() != case.weights.sum() or (method != "raw" and len(buckets.weights) != budget):
+        if (not np.isclose(buckets.weights.sum(), case.weights.sum(), rtol=1e-12, atol=0)
+                or (method != "raw" and len(buckets.weights) != budget)):
             raise AssertionError(f"{method} did not preserve demand or bucket budget")
         plans[method] = {
             "bucket_count": len(buckets.weights),
