@@ -49,14 +49,37 @@ class ResearchTests(unittest.TestCase):
                         atol=1e-10,
                     )
 
+    def test_fractional_demand_and_weighted_centroids(self):
+        # Two well-separated groups with every group's mass below one.
+        points = np.array([[0.0, 0.0], [0.01, 0.0], [20.0, 20.0], [20.03, 20.0]])
+        weights = np.array([0.4, 0.4, 0.2, 0.4])
+        expected_points = [[0.005, 0.0], [20.02, 20.0]]
+        expected_weights = [0.8, 0.6]
+        methods = {
+            "fixed": fixed_h3(points, weights),
+            "spread": adaptive_h3(points, weights, 2, "spread"),
+            "volume": adaptive_h3(points, weights, 2, "volume"),
+            "kmeans": weighted_kmeans(points, weights, 2),
+        }
+        for method, buckets in methods.items():
+            with self.subTest(method=method):
+                self.assertEqual(len(buckets.weights), 2)
+                order = np.argsort(buckets.points[:, 0])
+                np.testing.assert_allclose(buckets.weights[order], expected_weights, rtol=0, atol=1e-14)
+                np.testing.assert_allclose(buckets.points[order], expected_points, rtol=0, atol=1e-12)
+                self.assertAlmostEqual(buckets.weights.sum(), weights.sum(), places=14)
+
     def test_saved_plans_score_against_the_original_demand(self):
         saved = json.loads(Path("outputs/benchmark.json").read_text(encoding="utf-8"))
         self.assertEqual(saved["summary"], summarize(saved["cases"]))
         for row, case in zip(saved["cases"], all_instances(), strict=True):
             self.assertEqual((row["family"], row["seed"], row["k"]), (case.family, case.seed, case.k))
             self.assertEqual(set(row["plans"]), set(METHODS))
-            np.testing.assert_array_equal(row["candidates"], case.candidates)
-            np.testing.assert_array_equal(row["plans"]["raw"]["representatives"], case.demand)
+            # Geographic conversion can differ in the last bits across platforms.
+            # A micrometer in these kilometer coordinates is below model precision.
+            np.testing.assert_allclose(row["candidates"], case.candidates, rtol=0, atol=1e-9)
+            np.testing.assert_allclose(row["plans"]["raw"]["representatives"], case.demand, rtol=0, atol=1e-9)
+            self.assertEqual(tuple(row["candidate_names"]), tuple(case.names))
             np.testing.assert_array_equal(row["plans"]["raw"]["weights"], case.weights)
             for method, plan in row["plans"].items():
                 hubs = tuple(case.names.index(name) for name in plan["hubs"])

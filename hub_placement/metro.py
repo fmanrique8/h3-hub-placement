@@ -38,7 +38,8 @@ def travel_times(metro, network_minutes, coordinates):
 def evaluate(metro, network_minutes, original, routing_seconds, resolution, budget, method):
     start = perf_counter()
     bucket = method_buckets(metro, resolution, budget, method)
-    if bucket.weights.sum() != metro.weights.sum() or len(bucket.weights) != budget:
+    if (not np.isclose(bucket.weights.sum(), metro.weights.sum(), rtol=1e-12, atol=0)
+            or len(bucket.weights) != budget):
         raise ValueError("Demand or bucket budget changed")
     model = original if method == "raw" else travel_times(metro, network_minutes, bucket.points)
     plan = solve_p_median(model, bucket.weights, K)
