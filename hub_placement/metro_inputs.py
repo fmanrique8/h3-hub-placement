@@ -92,7 +92,7 @@ def load_blocks(path: Path):
     return tuple(keys), np.asarray(coords), np.asarray(weights)
 
 
-def load_roads(path: Path):
+def load_roads(path: Path, speeds=ROAD_SPEEDS):
     positions = {}
     links = {}
     with ZipFile(path) as archive:
@@ -101,7 +101,7 @@ def load_roads(path: Path):
                               dbf=io.BytesIO(archive.read(f"{prefix}.dbf"))) as entries:
             for item in entries.iterShapeRecords(fields=["MTFCC", "TNIDF", "TNIDT"]):
                 road = item.record
-                if road.MTFCC not in ROAD_SPEEDS:
+                if road.MTFCC not in speeds:
                     continue
                 if len(item.shape.parts) != 1:
                     raise ValueError("A selected TIGER edge has multiple geometry parts")
@@ -118,7 +118,7 @@ def load_roads(path: Path):
                     if not np.allclose(old, position, rtol=0, atol=0.0003):
                         raise ValueError(f"Inconsistent TIGER node geometry for {node}")
                 pair = tuple(sorted(graph_ids))
-                minutes = float(distance * 60 / ROAD_SPEEDS[road.MTFCC])
+                minutes = float(distance * 60 / speeds[road.MTFCC])
                 links[pair] = min(links.get(pair, np.inf), minutes)
     order = sorted(positions)
     indices = {key: i for i, key in enumerate(order)}
@@ -133,12 +133,12 @@ def load_roads(path: Path):
     return connected, np.array([positions[key] for key in order])[keep]
 
 
-def load_metro(path: Path) -> Metro:
+def load_metro(path: Path, *, grid_size=5, shift=(0, 0), speeds=ROAD_SPEEDS) -> Metro:
     keys, points, weights = load_blocks(path / "dane-blocks.json")
-    graph, nodes = load_roads(path / "dane-edges.zip")
+    graph, nodes = load_roads(path / "dane-edges.zip", speeds)
     node_index = cKDTree(nodes)
-    anchors = np.array([to_xy(lng, lat) for lat in np.linspace(SOUTH + 0.016, NORTH - 0.016, 5)
-                        for lng in np.linspace(WEST + 0.026, EAST - 0.026, 5)])
+    anchors = np.array([to_xy(lng, lat) for lat in np.linspace(SOUTH + 0.016, NORTH - 0.016, grid_size)
+                        for lng in np.linspace(WEST + 0.026, EAST - 0.026, grid_size)]) + shift
     offsets, nearest = node_index.query(anchors)
     candidates = {}
     for i, (index, offset) in enumerate(zip(nearest, offsets, strict=True), start=1):

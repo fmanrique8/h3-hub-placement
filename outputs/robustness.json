@@ -1,0 +1,2578 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "dane-edges.zip": {
+      "url": "https://www2.census.gov/geo/tiger/TIGER2024/EDGES/tl_2024_55025_edges.zip",
+      "sha256": "aff85a68f02a16867519a1af8e7311383e20c8c5449d2e391241178240afdf9f",
+      "bytes": 8292527
+    },
+    "dane-blocks.json": {
+      "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/10/query?f=json&where=STATE%3D%2755%27%20AND%20COUNTY%3D%27025%27%20AND%20POP100%3E0&geometry=-89.54%2C43.00%2C-89.28%2C43.16&geometryType=esriGeometryEnvelope&inSR=4326&outFields=GEOID%2CINTPTLAT%2CINTPTLON%2CPOP100&returnGeometry=false&orderByFields=GEOID",
+      "sha256": "3ed3ed3d70e5673a351e40807726a37a0ebbb480bb4a3a639b55993e79f6219a",
+      "bytes": 377454
+    }
+  },
+  "solver_options": {
+    "time_limit": 20.0,
+    "mip_rel_gap": 1e-06,
+    "threads": 1,
+    "random_seed": 0,
+    "presolve": true
+  },
+  "repeats": 3,
+  "k": 3,
+  "scenarios": [
+    {
+      "scenario": "original",
+      "settings": {},
+      "candidates": 24,
+      "triples": 2024,
+      "block_count": 3473,
+      "routing_seconds": [
+        0.5458263999316841,
+        0.45851610018871725,
+        0.5003441001754254
+      ],
+      "exact": {
+        "cost_resident_minutes": 2450203.8281636317,
+        "model_dual_bound": 2450203.8281636317,
+        "hubs": [
+          "M06",
+          "M13",
+          "M20"
+        ],
+        "p95_minutes": 13.445589712630312,
+        "enumeration_seconds": 0.12977270013652742,
+        "routing_inclusive_seconds": 0.6755991000682116,
+        "routing_inclusive_seconds_median": 0.6536851001437753,
+        "enumeration_seconds_median": 0.15334099996834993
+      },
+      "exact_runs": [
+        {
+          "cost_resident_minutes": 2450203.8281636317,
+          "model_dual_bound": 2450203.8281636317,
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "p95_minutes": 13.445589712630312,
+          "enumeration_seconds": 0.12977270013652742,
+          "routing_inclusive_seconds": 0.6755991000682116
+        },
+        {
+          "cost_resident_minutes": 2450203.8281636317,
+          "model_dual_bound": 2450203.8281636317,
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "p95_minutes": 13.445589712630312,
+          "enumeration_seconds": 0.15927109983749688,
+          "routing_inclusive_seconds": 0.6177872000262141
+        },
+        {
+          "cost_resident_minutes": 2450203.8281636317,
+          "model_dual_bound": 2450203.8281636317,
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "p95_minutes": 13.445589712630312,
+          "enumeration_seconds": 0.15334099996834993,
+          "routing_inclusive_seconds": 0.6536851001437753
+        }
+      ],
+      "independent_check": {
+        "hubs": [
+          "M06",
+          "M13",
+          "M20"
+        ],
+        "cost_resident_minutes": 2450203.8281636327
+      },
+      "budgets": [
+        {
+          "resolution": 6,
+          "bucket_count": 18,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M07"
+              ],
+              "removed": [
+                "M06"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "cost_excess_pct": 2.8194874950250526,
+              "cost_bound_excess_pct": 2.8194874950250526,
+              "p95_delta_pct": 1.9128127243652315,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.03883829992264509,
+              "routing_inclusive_seconds_median": 0.5391824000980705,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2519287.0187013303,
+                  "mean_minutes": 7.7098531001197514,
+                  "p95_minutes": 13.702778663519446,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2317063.670363774,
+                  "method_seconds": 1.2937064999714494,
+                  "routing_inclusive_seconds": 1.8395328999031335
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2519287.0187013303,
+                  "mean_minutes": 7.7098531001197514,
+                  "p95_minutes": 13.702778663519446,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2317063.670363774,
+                  "method_seconds": 0.03806789987720549,
+                  "routing_inclusive_seconds": 0.49658400006592274
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2519287.0187013303,
+                  "mean_minutes": 7.7098531001197514,
+                  "p95_minutes": 13.702778663519446,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2317063.670363774,
+                  "method_seconds": 0.03883829992264509,
+                  "routing_inclusive_seconds": 0.5391824000980705
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M07"
+              ],
+              "removed": [
+                "M06"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "cost_excess_pct": 2.8194874950250526,
+              "cost_bound_excess_pct": 2.8194874950250526,
+              "p95_delta_pct": 1.9128127243652315,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.05922410008497536,
+              "routing_inclusive_seconds_median": 0.5595682002604008,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2519287.0187013303,
+                  "mean_minutes": 7.7098531001197514,
+                  "p95_minutes": 13.702778663519446,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2317063.670363774,
+                  "method_seconds": 0.06642629997804761,
+                  "routing_inclusive_seconds": 0.6122526999097317
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2519287.0187013303,
+                  "mean_minutes": 7.7098531001197514,
+                  "p95_minutes": 13.702778663519446,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2317063.670363774,
+                  "method_seconds": 0.0576339999679476,
+                  "routing_inclusive_seconds": 0.5161501001566648
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2519287.0187013303,
+                  "mean_minutes": 7.7098531001197514,
+                  "p95_minutes": 13.702778663519446,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2317063.670363774,
+                  "method_seconds": 0.05922410008497536,
+                  "routing_inclusive_seconds": 0.5595682002604008
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.1946048999670893,
+              "routing_inclusive_seconds_median": 0.6949490001425147,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2341510.634477141,
+                  "method_seconds": 1.5019529000855982,
+                  "routing_inclusive_seconds": 2.0477793000172824
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2341510.634477141,
+                  "method_seconds": 0.19076370005495846,
+                  "routing_inclusive_seconds": 0.6492798002436757
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2341510.634477141,
+                  "method_seconds": 0.1946048999670893,
+                  "routing_inclusive_seconds": 0.6949490001425147
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "removed": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2479886.2194489865,
+              "mean_minutes": 7.589273598059097,
+              "p95_minutes": 13.196627699727246,
+              "cost_excess_pct": 1.2114253901725824,
+              "cost_bound_excess_pct": 1.2114253901725824,
+              "p95_delta_pct": -1.851625835862003,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.06947830016724765,
+              "routing_inclusive_seconds_median": 0.5698224003426731,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M10",
+                    "M14"
+                  ],
+                  "cost_resident_minutes": 2479886.2194489865,
+                  "mean_minutes": 7.589273598059097,
+                  "p95_minutes": 13.196627699727246,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2024111.460339547,
+                  "method_seconds": 0.0701888999901712,
+                  "routing_inclusive_seconds": 0.6160152999218553
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M10",
+                    "M14"
+                  ],
+                  "cost_resident_minutes": 2479886.2194489865,
+                  "mean_minutes": 7.589273598059097,
+                  "p95_minutes": 13.196627699727246,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2024111.460339547,
+                  "method_seconds": 0.06241260003298521,
+                  "routing_inclusive_seconds": 0.5209287002217025
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M10",
+                    "M14"
+                  ],
+                  "cost_resident_minutes": 2479886.2194489865,
+                  "mean_minutes": 7.589273598059097,
+                  "p95_minutes": 13.196627699727246,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2024111.460339547,
+                  "method_seconds": 0.06947830016724765,
+                  "routing_inclusive_seconds": 0.5698224003426731
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": false,
+            "within_one_percent_of_raw_cost": false,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": false,
+            "continue": false
+          }
+        },
+        {
+          "resolution": 7,
+          "bucket_count": 83,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.11104190000332892,
+              "routing_inclusive_seconds_median": 0.6212455001659691,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2408098.111857497,
+                  "method_seconds": 0.09486819989979267,
+                  "routing_inclusive_seconds": 0.6406945998314768
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2408098.111857497,
+                  "method_seconds": 0.11104190000332892,
+                  "routing_inclusive_seconds": 0.5695580001920462
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2408098.111857497,
+                  "method_seconds": 0.12090139999054372,
+                  "routing_inclusive_seconds": 0.6212455001659691
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.25512810004875064,
+              "routing_inclusive_seconds_median": 0.755472200224176,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2415360.6374847,
+                  "method_seconds": 0.2818410999607295,
+                  "routing_inclusive_seconds": 0.8276674998924136
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2415360.6374847,
+                  "method_seconds": 0.2401219999883324,
+                  "routing_inclusive_seconds": 0.6986381001770496
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2415360.6374847,
+                  "method_seconds": 0.25512810004875064,
+                  "routing_inclusive_seconds": 0.755472200224176
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.6624628999270499,
+              "routing_inclusive_seconds_median": 1.1582052998710424,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2380008.862912448,
+                  "method_seconds": 0.6123788999393582,
+                  "routing_inclusive_seconds": 1.1582052998710424
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2380008.862912448,
+                  "method_seconds": 0.6624628999270499,
+                  "routing_inclusive_seconds": 1.1209790001157671
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2380008.862912448,
+                  "method_seconds": 0.6703181001357734,
+                  "routing_inclusive_seconds": 1.1706622003111988
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.16930919978767633,
+              "routing_inclusive_seconds_median": 0.6746787000447512,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2410148.1787339193,
+                  "method_seconds": 0.15738410013727844,
+                  "routing_inclusive_seconds": 0.7032105000689626
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2410148.1787339193,
+                  "method_seconds": 0.16930919978767633,
+                  "routing_inclusive_seconds": 0.6278252999763936
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2450203.8281636317,
+                  "mean_minutes": 7.498435644792331,
+                  "p95_minutes": 13.445589712630312,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2410148.1787339193,
+                  "method_seconds": 0.17433459986932576,
+                  "routing_inclusive_seconds": 0.6746787000447512
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": false,
+            "within_one_percent_of_raw_cost": true,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": true,
+            "continue": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "shifted",
+      "settings": {
+        "shift": [
+          1,
+          -1
+        ]
+      },
+      "candidates": 23,
+      "triples": 1771,
+      "block_count": 3473,
+      "routing_seconds": [
+        0.4532959999050945,
+        0.46853579999879,
+        0.47000570013187826
+      ],
+      "exact": {
+        "cost_resident_minutes": 2055259.7843357536,
+        "model_dual_bound": 2055259.7843357536,
+        "hubs": [
+          "M07",
+          "M13",
+          "M19"
+        ],
+        "p95_minutes": 12.98699159222694,
+        "enumeration_seconds": 0.12111430009827018,
+        "routing_inclusive_seconds": 0.5744103000033647,
+        "routing_inclusive_seconds_median": 0.5806257000658661,
+        "enumeration_seconds_median": 0.12111430009827018
+      },
+      "exact_runs": [
+        {
+          "cost_resident_minutes": 2055259.7843357536,
+          "model_dual_bound": 2055259.7843357536,
+          "hubs": [
+            "M07",
+            "M13",
+            "M19"
+          ],
+          "p95_minutes": 12.98699159222694,
+          "enumeration_seconds": 0.12111430009827018,
+          "routing_inclusive_seconds": 0.5744103000033647
+        },
+        {
+          "cost_resident_minutes": 2055259.7843357536,
+          "model_dual_bound": 2055259.7843357536,
+          "hubs": [
+            "M07",
+            "M13",
+            "M19"
+          ],
+          "p95_minutes": 12.98699159222694,
+          "enumeration_seconds": 0.11208990006707609,
+          "routing_inclusive_seconds": 0.5806257000658661
+        },
+        {
+          "cost_resident_minutes": 2055259.7843357536,
+          "model_dual_bound": 2055259.7843357536,
+          "hubs": [
+            "M07",
+            "M13",
+            "M19"
+          ],
+          "p95_minutes": 12.98699159222694,
+          "enumeration_seconds": 0.12199959997087717,
+          "routing_inclusive_seconds": 0.5920053001027554
+        }
+      ],
+      "independent_check": null,
+      "budgets": [
+        {
+          "resolution": 6,
+          "bucket_count": 18,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.03650550008751452,
+              "routing_inclusive_seconds_median": 0.50454629980959,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1755305.2988719107,
+                  "method_seconds": 0.03650550008751452,
+                  "routing_inclusive_seconds": 0.489801499992609
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1755305.2988719107,
+                  "method_seconds": 0.036010499810799956,
+                  "routing_inclusive_seconds": 0.50454629980959
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1755305.2988719107,
+                  "method_seconds": 0.05366119998507202,
+                  "routing_inclusive_seconds": 0.5236669001169503
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.06305760005488992,
+              "routing_inclusive_seconds_median": 0.530686599900946,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1755305.2988719107,
+                  "method_seconds": 0.06305760005488992,
+                  "routing_inclusive_seconds": 0.5163535999599844
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1755305.2988719107,
+                  "method_seconds": 0.062150799902155995,
+                  "routing_inclusive_seconds": 0.530686599900946
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1755305.2988719107,
+                  "method_seconds": 0.06757279997691512,
+                  "routing_inclusive_seconds": 0.5375785001087934
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.19601169996894896,
+              "routing_inclusive_seconds_median": 0.6660174001008272,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1926206.1784834268,
+                  "method_seconds": 0.1945674999151379,
+                  "routing_inclusive_seconds": 0.6478634998202324
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1926206.1784834268,
+                  "method_seconds": 0.21979089989326894,
+                  "routing_inclusive_seconds": 0.688326699892059
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1926206.1784834268,
+                  "method_seconds": 0.19601169996894896,
+                  "routing_inclusive_seconds": 0.6660174001008272
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.06398000009357929,
+              "routing_inclusive_seconds_median": 0.5325158000923693,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1690621.331638908,
+                  "method_seconds": 0.06074139988049865,
+                  "routing_inclusive_seconds": 0.5140373997855932
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1690621.331638908,
+                  "method_seconds": 0.06398000009357929,
+                  "routing_inclusive_seconds": 0.5325158000923693
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1690621.331638908,
+                  "method_seconds": 0.08663540007546544,
+                  "routing_inclusive_seconds": 0.5566411002073437
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": false,
+            "within_one_percent_of_raw_cost": true,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": true,
+            "continue": false
+          }
+        },
+        {
+          "resolution": 7,
+          "bucket_count": 83,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.0949519001878798,
+              "routing_inclusive_seconds_median": 0.5649576003197581,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2005931.7082154674,
+                  "method_seconds": 0.08740870002657175,
+                  "routing_inclusive_seconds": 0.5407046999316663
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2005931.7082154674,
+                  "method_seconds": 0.09837729996070266,
+                  "routing_inclusive_seconds": 0.5669130999594927
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2005931.7082154674,
+                  "method_seconds": 0.0949519001878798,
+                  "routing_inclusive_seconds": 0.5649576003197581
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.1541192999575287,
+              "routing_inclusive_seconds_median": 0.6226550999563187,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2013998.159665894,
+                  "method_seconds": 0.14275070000439882,
+                  "routing_inclusive_seconds": 0.5960466999094933
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2013998.159665894,
+                  "method_seconds": 0.1541192999575287,
+                  "routing_inclusive_seconds": 0.6226550999563187
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2013998.159665894,
+                  "method_seconds": 0.15438219998031855,
+                  "routing_inclusive_seconds": 0.6243879001121968
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.6201594001613557,
+              "routing_inclusive_seconds_median": 1.0886952001601458,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1985969.5150233072,
+                  "method_seconds": 0.6129936999641359,
+                  "routing_inclusive_seconds": 1.0662896998692304
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1985969.5150233072,
+                  "method_seconds": 0.6201594001613557,
+                  "routing_inclusive_seconds": 1.0886952001601458
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1985969.5150233072,
+                  "method_seconds": 0.6230869002174586,
+                  "routing_inclusive_seconds": 1.0930926003493369
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M19"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2055259.7843357536,
+              "mean_minutes": 6.289775997012363,
+              "p95_minutes": 12.98699159222694,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.14544040011242032,
+              "routing_inclusive_seconds_median": 0.6139762001112103,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2014608.9158443492,
+                  "method_seconds": 0.14415149996057153,
+                  "routing_inclusive_seconds": 0.597447499865666
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2014608.9158443492,
+                  "method_seconds": 0.14544040011242032,
+                  "routing_inclusive_seconds": 0.6139762001112103
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M19"
+                  ],
+                  "cost_resident_minutes": 2055259.7843357536,
+                  "mean_minutes": 6.289775997012363,
+                  "p95_minutes": 12.98699159222694,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2014608.9158443492,
+                  "method_seconds": 0.16356299980543554,
+                  "routing_inclusive_seconds": 0.6335686999373138
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": false,
+            "within_one_percent_of_raw_cost": true,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": true,
+            "continue": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "slower_highways",
+      "settings": {
+        "speeds": {
+          "S1100": 67.5,
+          "S1200": 45,
+          "S1400": 35,
+          "S1630": 40,
+          "S1640": 25
+        }
+      },
+      "candidates": 24,
+      "triples": 2024,
+      "block_count": 3473,
+      "routing_seconds": [
+        0.46297689992934465,
+        0.4524169999640435,
+        0.479578300146386
+      ],
+      "exact": {
+        "cost_resident_minutes": 2661278.1913200794,
+        "model_dual_bound": 2661278.1913200794,
+        "hubs": [
+          "M06",
+          "M13",
+          "M20"
+        ],
+        "p95_minutes": 15.18481634873117,
+        "enumeration_seconds": 0.14143489999696612,
+        "routing_inclusive_seconds": 0.6044117999263108,
+        "routing_inclusive_seconds_median": 0.6044117999263108,
+        "enumeration_seconds_median": 0.14143489999696612
+      },
+      "exact_runs": [
+        {
+          "cost_resident_minutes": 2661278.1913200794,
+          "model_dual_bound": 2661278.1913200794,
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "p95_minutes": 15.18481634873117,
+          "enumeration_seconds": 0.14143489999696612,
+          "routing_inclusive_seconds": 0.6044117999263108
+        },
+        {
+          "cost_resident_minutes": 2661278.1913200794,
+          "model_dual_bound": 2661278.1913200794,
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "p95_minutes": 15.18481634873117,
+          "enumeration_seconds": 0.1320475002285093,
+          "routing_inclusive_seconds": 0.5844645001925528
+        },
+        {
+          "cost_resident_minutes": 2661278.1913200794,
+          "model_dual_bound": 2661278.1913200794,
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "p95_minutes": 15.18481634873117,
+          "enumeration_seconds": 0.14233180019073188,
+          "routing_inclusive_seconds": 0.6219101003371179
+        }
+      ],
+      "independent_check": null,
+      "budgets": [
+        {
+          "resolution": 6,
+          "bucket_count": 18,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M07"
+              ],
+              "removed": [
+                "M06"
+              ],
+              "cost_resident_minutes": 2742065.4941723747,
+              "mean_minutes": 8.391629057761842,
+              "p95_minutes": 15.761772415063827,
+              "cost_excess_pct": 3.0356579449599908,
+              "cost_bound_excess_pct": 3.0356579449599908,
+              "p95_delta_pct": 3.799559066651925,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.04618020006455481,
+              "routing_inclusive_seconds_median": 0.5020116998348385,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2742065.4941723747,
+                  "mean_minutes": 8.391629057761842,
+                  "p95_minutes": 15.761772415063827,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2510390.7577256453,
+                  "method_seconds": 0.03789759986102581,
+                  "routing_inclusive_seconds": 0.5008744997903705
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2742065.4941723747,
+                  "mean_minutes": 8.391629057761842,
+                  "p95_minutes": 15.761772415063827,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2510390.7577256453,
+                  "method_seconds": 0.04959469987079501,
+                  "routing_inclusive_seconds": 0.5020116998348385
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2742065.4941723747,
+                  "mean_minutes": 8.391629057761842,
+                  "p95_minutes": 15.761772415063827,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2510390.7577256453,
+                  "method_seconds": 0.04618020006455481,
+                  "routing_inclusive_seconds": 0.5257585002109408
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M07"
+              ],
+              "removed": [
+                "M06"
+              ],
+              "cost_resident_minutes": 2742065.4941723747,
+              "mean_minutes": 8.391629057761842,
+              "p95_minutes": 15.761772415063827,
+              "cost_excess_pct": 3.0356579449599908,
+              "cost_bound_excess_pct": 3.0356579449599908,
+              "p95_delta_pct": 3.799559066651925,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.06170479999855161,
+              "routing_inclusive_seconds_median": 0.5327002997510135,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2742065.4941723747,
+                  "mean_minutes": 8.391629057761842,
+                  "p95_minutes": 15.761772415063827,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2510390.7577256453,
+                  "method_seconds": 0.06972339982166886,
+                  "routing_inclusive_seconds": 0.5327002997510135
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2742065.4941723747,
+                  "mean_minutes": 8.391629057761842,
+                  "p95_minutes": 15.761772415063827,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2510390.7577256453,
+                  "method_seconds": 0.06170479999855161,
+                  "routing_inclusive_seconds": 0.5141217999625951
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2742065.4941723747,
+                  "mean_minutes": 8.391629057761842,
+                  "p95_minutes": 15.761772415063827,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2510390.7577256453,
+                  "method_seconds": 0.058270700043067336,
+                  "routing_inclusive_seconds": 0.5378490001894534
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2661278.1913200794,
+              "mean_minutes": 8.144393140328678,
+              "p95_minutes": 15.18481634873117,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.1972202998585999,
+              "routing_inclusive_seconds_median": 0.660010099876672,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2580246.268893322,
+                  "method_seconds": 0.19703319994732738,
+                  "routing_inclusive_seconds": 0.660010099876672
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2580246.268893322,
+                  "method_seconds": 0.1972202998585999,
+                  "routing_inclusive_seconds": 0.6496372998226434
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2580246.268893322,
+                  "method_seconds": 0.20671109994873405,
+                  "routing_inclusive_seconds": 0.6862894000951201
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "removed": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2749219.6160681006,
+              "mean_minutes": 8.413523041443316,
+              "p95_minutes": 14.657823942278428,
+              "cost_excess_pct": 3.304480720386449,
+              "cost_bound_excess_pct": 3.304480720386449,
+              "p95_delta_pct": -3.4705220949002524,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.0577307001221925,
+              "routing_inclusive_seconds_median": 0.5207076000515372,
+              "runs": [
+                {
+                  "hubs": [
+                    "M07",
+                    "M10",
+                    "M14"
+                  ],
+                  "cost_resident_minutes": 2749219.6160681006,
+                  "mean_minutes": 8.413523041443316,
+                  "p95_minutes": 14.657823942278428,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2239604.097318167,
+                  "method_seconds": 0.0577307001221925,
+                  "routing_inclusive_seconds": 0.5207076000515372
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M10",
+                    "M14"
+                  ],
+                  "cost_resident_minutes": 2749219.6160681006,
+                  "mean_minutes": 8.413523041443316,
+                  "p95_minutes": 14.657823942278428,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2239604.097318167,
+                  "method_seconds": 0.057585000060498714,
+                  "routing_inclusive_seconds": 0.5100020000245422
+                },
+                {
+                  "hubs": [
+                    "M07",
+                    "M10",
+                    "M14"
+                  ],
+                  "cost_resident_minutes": 2749219.6160681006,
+                  "mean_minutes": 8.413523041443316,
+                  "p95_minutes": 14.657823942278428,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2239604.097318167,
+                  "method_seconds": 0.06215879996307194,
+                  "routing_inclusive_seconds": 0.541737100109458
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": false,
+            "within_one_percent_of_raw_cost": false,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": false,
+            "continue": false
+          }
+        },
+        {
+          "resolution": 7,
+          "bucket_count": 83,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2661278.1913200794,
+              "mean_minutes": 8.144393140328678,
+              "p95_minutes": 15.18481634873117,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.10182169987820089,
+              "routing_inclusive_seconds_median": 0.5647985998075455,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2614856.4520839266,
+                  "method_seconds": 0.10182169987820089,
+                  "routing_inclusive_seconds": 0.5647985998075455
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2614856.4520839266,
+                  "method_seconds": 0.09797300002537668,
+                  "routing_inclusive_seconds": 0.5503899999894202
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2614856.4520839266,
+                  "method_seconds": 0.10281720012426376,
+                  "routing_inclusive_seconds": 0.5823955002706498
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2661278.1913200794,
+              "mean_minutes": 8.144393140328678,
+              "p95_minutes": 15.18481634873117,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.17138649988919497,
+              "routing_inclusive_seconds_median": 0.6381010001059622,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2625401.787396126,
+                  "method_seconds": 0.18367670010775328,
+                  "routing_inclusive_seconds": 0.6466536000370979
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2625401.787396126,
+                  "method_seconds": 0.17138649988919497,
+                  "routing_inclusive_seconds": 0.6238034998532385
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2625401.787396126,
+                  "method_seconds": 0.15852269995957613,
+                  "routing_inclusive_seconds": 0.6381010001059622
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2661278.1913200794,
+              "mean_minutes": 8.144393140328678,
+              "p95_minutes": 15.18481634873117,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.6199286999180913,
+              "routing_inclusive_seconds_median": 1.0735087003558874,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2595917.19335468,
+                  "method_seconds": 0.6410850998945534,
+                  "routing_inclusive_seconds": 1.104061999823898
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2595917.19335468,
+                  "method_seconds": 0.6199286999180913,
+                  "routing_inclusive_seconds": 1.0723456998821348
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2595917.19335468,
+                  "method_seconds": 0.5939304002095014,
+                  "routing_inclusive_seconds": 1.0735087003558874
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2661278.1913200794,
+              "mean_minutes": 8.144393140328678,
+              "p95_minutes": 15.18481634873117,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.15634489990770817,
+              "routing_inclusive_seconds_median": 0.6193217998370528,
+              "runs": [
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2619317.5409216275,
+                  "method_seconds": 0.15634489990770817,
+                  "routing_inclusive_seconds": 0.6193217998370528
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2619317.5409216275,
+                  "method_seconds": 0.16510909982025623,
+                  "routing_inclusive_seconds": 0.6175260997842997
+                },
+                {
+                  "hubs": [
+                    "M06",
+                    "M13",
+                    "M20"
+                  ],
+                  "cost_resident_minutes": 2661278.1913200794,
+                  "mean_minutes": 8.144393140328678,
+                  "p95_minutes": 15.18481634873117,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2619317.5409216275,
+                  "method_seconds": 0.15306809986941516,
+                  "routing_inclusive_seconds": 0.6326464000158012
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": false,
+            "within_one_percent_of_raw_cost": true,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": true,
+            "continue": false
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "denser",
+      "settings": {
+        "grid_size": 9
+      },
+      "candidates": 76,
+      "triples": 70300,
+      "block_count": 3473,
+      "routing_seconds": [
+        1.603158799931407,
+        1.5096814001444727,
+        1.5127797999884933
+      ],
+      "exact": {
+        "cost_resident_minutes": 2165118.7872820264,
+        "model_dual_bound": 2165118.7872820264,
+        "hubs": [
+          "M12",
+          "M33",
+          "M62"
+        ],
+        "p95_minutes": 13.277942984367556,
+        "enumeration_seconds": 5.154402900021523,
+        "routing_inclusive_seconds": 6.75756169995293,
+        "routing_inclusive_seconds_median": 6.75756169995293,
+        "enumeration_seconds_median": 5.195912800030783
+      },
+      "exact_runs": [
+        {
+          "cost_resident_minutes": 2165118.7872820264,
+          "model_dual_bound": 2165118.7872820264,
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "p95_minutes": 13.277942984367556,
+          "enumeration_seconds": 5.154402900021523,
+          "routing_inclusive_seconds": 6.75756169995293
+        },
+        {
+          "cost_resident_minutes": 2165118.7872820264,
+          "model_dual_bound": 2165118.7872820264,
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "p95_minutes": 13.277942984367556,
+          "enumeration_seconds": 5.195912800030783,
+          "routing_inclusive_seconds": 6.7055942001752555
+        },
+        {
+          "cost_resident_minutes": 2165118.7872820264,
+          "model_dual_bound": 2165118.7872820264,
+          "hubs": [
+            "M12",
+            "M33",
+            "M62"
+          ],
+          "p95_minutes": 13.277942984367556,
+          "enumeration_seconds": 6.36860609985888,
+          "routing_inclusive_seconds": 7.881385899847373
+        }
+      ],
+      "independent_check": null,
+      "budgets": [
+        {
+          "resolution": 6,
+          "bucket_count": 18,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.062169799814000726,
+              "routing_inclusive_seconds_median": 1.6368515000212938,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1855493.2148791328,
+                  "method_seconds": 0.06049749976955354,
+                  "routing_inclusive_seconds": 1.6636562997009605
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1855493.2148791328,
+                  "method_seconds": 0.062169799814000726,
+                  "routing_inclusive_seconds": 1.5718511999584734
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1855493.2148791328,
+                  "method_seconds": 0.12407170003280044,
+                  "routing_inclusive_seconds": 1.6368515000212938
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.08440309995785356,
+              "routing_inclusive_seconds_median": 1.6875618998892605,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1855493.2148791328,
+                  "method_seconds": 0.08440309995785356,
+                  "routing_inclusive_seconds": 1.6875618998892605
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1855493.2148791328,
+                  "method_seconds": 0.07832159986719489,
+                  "routing_inclusive_seconds": 1.5880030000116676
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1855493.2148791328,
+                  "method_seconds": 0.18837330001406372,
+                  "routing_inclusive_seconds": 1.701153100002557
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.27870009979233146,
+              "routing_inclusive_seconds_median": 1.7883814999368042,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2060064.007893827,
+                  "method_seconds": 0.3367018001154065,
+                  "routing_inclusive_seconds": 1.9398606000468135
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2060064.007893827,
+                  "method_seconds": 0.27870009979233146,
+                  "routing_inclusive_seconds": 1.7883814999368042
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2060064.007893827,
+                  "method_seconds": 0.2665736998897046,
+                  "routing_inclusive_seconds": 1.779353499878198
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M12",
+                "M27",
+                "M52"
+              ],
+              "hubs_stable": true,
+              "added": [
+                "M27",
+                "M52"
+              ],
+              "removed": [
+                "M33",
+                "M62"
+              ],
+              "cost_resident_minutes": 2243223.555236317,
+              "mean_minutes": 6.865007422026788,
+              "p95_minutes": 12.410789269007294,
+              "cost_excess_pct": 3.6074126007811014,
+              "cost_bound_excess_pct": 3.6074126007811014,
+              "p95_delta_pct": -6.530783543664731,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.08763359999284148,
+              "routing_inclusive_seconds_median": 1.6134984998498112,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M27",
+                    "M52"
+                  ],
+                  "cost_resident_minutes": 2243223.555236317,
+                  "mean_minutes": 6.865007422026788,
+                  "p95_minutes": 12.410789269007294,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1663089.8509118664,
+                  "method_seconds": 0.08317550015635788,
+                  "routing_inclusive_seconds": 1.6863343000877649
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M27",
+                    "M52"
+                  ],
+                  "cost_resident_minutes": 2243223.555236317,
+                  "mean_minutes": 6.865007422026788,
+                  "p95_minutes": 12.410789269007294,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1663089.8509118664,
+                  "method_seconds": 0.08763359999284148,
+                  "routing_inclusive_seconds": 1.5973150001373142
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M27",
+                    "M52"
+                  ],
+                  "cost_resident_minutes": 2243223.555236317,
+                  "mean_minutes": 6.865007422026788,
+                  "p95_minutes": 12.410789269007294,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 1663089.8509118664,
+                  "method_seconds": 0.10071869986131787,
+                  "routing_inclusive_seconds": 1.6134984998498112
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": true,
+            "within_one_percent_of_raw_cost": true,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": false,
+            "continue": false
+          }
+        },
+        {
+          "resolution": 7,
+          "bucket_count": 83,
+          "methods": {
+            "fixed": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.2707357001490891,
+              "routing_inclusive_seconds_median": 1.7804171002935618,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2090719.5899344294,
+                  "method_seconds": 0.3060659999027848,
+                  "routing_inclusive_seconds": 1.9092247998341918
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2090719.5899344294,
+                  "method_seconds": 0.2707357001490891,
+                  "routing_inclusive_seconds": 1.7804171002935618
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2090719.5899344294,
+                  "method_seconds": 0.26678239996545017,
+                  "routing_inclusive_seconds": 1.7795621999539435
+                }
+              ]
+            },
+            "adaptive_spread": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.3059396999888122,
+              "routing_inclusive_seconds_median": 1.8187194999773055,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2112415.3386338274,
+                  "method_seconds": 0.3656828999519348,
+                  "routing_inclusive_seconds": 1.9688416998833418
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2112415.3386338274,
+                  "method_seconds": 0.30538649996742606,
+                  "routing_inclusive_seconds": 1.8150679001118988
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2112415.3386338274,
+                  "method_seconds": 0.3059396999888122,
+                  "routing_inclusive_seconds": 1.8187194999773055
+                }
+              ]
+            },
+            "kmeans": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.8535821000114083,
+              "routing_inclusive_seconds_median": 2.4567408999428153,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2101561.0343809975,
+                  "method_seconds": 0.8535821000114083,
+                  "routing_inclusive_seconds": 2.4567408999428153
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2101561.0343809975,
+                  "method_seconds": 0.8113198999781162,
+                  "routing_inclusive_seconds": 2.321001300122589
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2101561.0343809975,
+                  "method_seconds": 1.081357500050217,
+                  "routing_inclusive_seconds": 2.5941373000387102
+                }
+              ]
+            },
+            "adaptive_volume": {
+              "hubs": [
+                "M12",
+                "M33",
+                "M62"
+              ],
+              "hubs_stable": true,
+              "added": [],
+              "removed": [],
+              "cost_resident_minutes": 2165118.7872820264,
+              "mean_minutes": 6.625980950300299,
+              "p95_minutes": 13.277942984367556,
+              "cost_excess_pct": 0.0,
+              "cost_bound_excess_pct": 0.0,
+              "p95_delta_pct": 0.0,
+              "max_solver_gap": 0.0,
+              "method_seconds_median": 0.3549071999732405,
+              "routing_inclusive_seconds_median": 1.9580659999046475,
+              "runs": [
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2111563.0914262966,
+                  "method_seconds": 0.3549071999732405,
+                  "routing_inclusive_seconds": 1.9580659999046475
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2111563.0914262966,
+                  "method_seconds": 0.31227919994853437,
+                  "routing_inclusive_seconds": 1.821960600093007
+                },
+                {
+                  "hubs": [
+                    "M12",
+                    "M33",
+                    "M62"
+                  ],
+                  "cost_resident_minutes": 2165118.7872820264,
+                  "mean_minutes": 6.625980950300299,
+                  "p95_minutes": 13.277942984367556,
+                  "solver_gap": 0.0,
+                  "solver_status": 0,
+                  "model_dual_bound": 2111563.0914262966,
+                  "method_seconds": 0.5176283000037074,
+                  "routing_inclusive_seconds": 2.0304080999922007
+                }
+              ]
+            }
+          },
+          "decision": {
+            "twice_as_fast_as_raw": true,
+            "within_one_percent_of_raw_cost": true,
+            "within_five_percent_of_raw_p95": true,
+            "advantage_over_fixed": false,
+            "advantage_over_kmeans": true,
+            "continue": false
+          }
+        }
+      ]
+    }
+  ]
+}

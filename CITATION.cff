@@ -3,6 +3,8 @@ message: Cite this repository and identify the synthetic-v1 fixtures and recorde
 title: How much does an H3 grid change where you put a warehouse?
 version: 0.1.0
 type: software
+repository-code: https://github.com/fmanrique8/h3-hub-placement
+url: https://fmanrique.com/blog/h3-warehouse-placement/
 authors:
   - family-names: Manrique
     given-names: Felipe

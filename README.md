@@ -1,8 +1,10 @@
 # How much does an H3 grid change where you put a warehouse?
 
+In a Madison road-time model, fixed H3 and direct enumeration both found the same hubs in about **0.6 seconds** with 24 candidates. With 76 candidates, fixed H3 still picked the exact hubs and took **1.78 seconds** compared with **6.76 seconds** for enumerating 70,300 triples. [Companion article on fmanrique.com](https://fmanrique.com/blog/h3-warehouse-placement/) · [Robustness results](ROBUSTNESS-RESULTS.md)
+
 At **23 buckets**, fixed H3 moved one of three hubs and increased demand-weighted distance by **14.77%** in the constructed split-cell case with seed 271. Spreadsheet-sized inputs make the difference easy to inspect. Fixed H3 chose `Middle` in place of `West`, raising cost from **2,328.46 to 2,672.34 demand-unit km** while reducing weighted p95 from **6.96 to 4.95 km**. Spread-based adaptive H3 recovered the raw-demand plan at the same count.
 
-**Madison follow-up.** Fixed and spread-based H3 selected the same sites at both matched budgets in a separate road-time model of 3,473 Census blocks. Fixed H3 was faster at both budgets. All 2,024 raw candidate triples could be enumerated in **0.58 s including routing** on the same machine. Neither budget passed the threshold for investing more in adaptive refinement. [Madison report](METRO-RESULTS.md)
+**Madison follow-up.** Fixed and spread-based H3 selected the same sites at both matched budgets in a separate road-time model of 3,473 Census blocks. Shifting the candidate grid, slowing two highway classes, and using more candidates all preserved that finding at both budgets. None passed the threshold for investing more in adaptive refinement. [Madison report](METRO-RESULTS.md)
 
 ## Recorded panel
 
