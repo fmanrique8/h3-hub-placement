@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: Cite this repository and identify the synthetic-v1 fixtures and recorded benchmark when using its results.
+title: How much does an H3 grid change where you put a warehouse?
+version: 0.1.0
+type: software
+authors:
+  - family-names: Manrique
+    given-names: Felipe
+abstract: A controlled synthetic benchmark of fixed H3, adaptive H3, and weighted k-means aggregation for discrete p-median placement.

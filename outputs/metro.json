@@ -1,0 +1,815 @@
+{
+  "schema_version": 1,
+  "study": "madison-dane-v1",
+  "k": 3,
+  "sources": {
+    "dane-edges.zip": {
+      "url": "https://www2.census.gov/geo/tiger/TIGER2024/EDGES/tl_2024_55025_edges.zip",
+      "sha256": "aff85a68f02a16867519a1af8e7311383e20c8c5449d2e391241178240afdf9f",
+      "bytes": 8292527
+    },
+    "dane-blocks.json": {
+      "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/10/query?f=json&where=STATE%3D%2755%27%20AND%20COUNTY%3D%27025%27%20AND%20POP100%3E0&geometry=-89.54%2C43.00%2C-89.28%2C43.16&geometryType=esriGeometryEnvelope&inSR=4326&outFields=GEOID%2CINTPTLAT%2CINTPTLON%2CPOP100&returnGeometry=false&orderByFields=GEOID",
+      "sha256": "3ed3ed3d70e5673a351e40807726a37a0ebbb480bb4a3a639b55993e79f6219a",
+      "bytes": 377454
+    }
+  },
+  "solver_options": {
+    "time_limit": 20.0,
+    "mip_rel_gap": 1e-06,
+    "threads": 1,
+    "random_seed": 0,
+    "presolve": true
+  },
+  "repeat_count": 3,
+  "block_count": 3473,
+  "population": 326762,
+  "node_count": 37791,
+  "edge_count": 45759,
+  "road_speeds_kph": {
+    "S1100": 90,
+    "S1200": 60,
+    "S1400": 35,
+    "S1630": 40,
+    "S1640": 25
+  },
+  "connector_speed_kph": 20,
+  "ingestion_seconds": 9.261350700166076,
+  "candidate_routing_seconds": [
+    0.45617279992438853,
+    0.4544325000606477,
+    0.5486065000295639
+  ],
+  "candidates": {
+    "M01": [
+      -8.440311053855662,
+      -7.13372037238225
+    ],
+    "M02": [
+      -4.166024417189421,
+      -7.179866330678802
+    ],
+    "M03": [
+      -0.47154572114680776,
+      -6.698058048027407
+    ],
+    "M04": [
+      4.080827816864474,
+      -7.130606910135671
+    ],
+    "M05": [
+      8.629059289463294,
+      -7.19988144512087
+    ],
+    "M06": [
+      -8.488310282446333,
+      -3.6237364697307743
+    ],
+    "M07": [
+      -4.364356255121459,
+      -3.5676941492923513
+    ],
+    "M08": [
+      -0.10631301222586562,
+      -3.366542249150513
+    ],
+    "M09": [
+      4.294509661909751,
+      -3.5682501246936953
+    ],
+    "M10": [
+      8.390200184074438,
+      -3.5724755377429624
+    ],
+    "M11": [
+      -8.442666345952151,
+      -0.044589227173262296
+    ],
+    "M12": [
+      -4.320255441036158,
+      0.034025694551674104
+    ],
+    "M13": [
+      -0.11857677452249692,
+      -0.28076757758951004
+    ],
+    "M14": [
+      4.148075467072601,
+      0.19814963297600197
+    ],
+    "M15": [
+      8.447458147113778,
+      0.055263954876383456
+    ],
+    "M16": [
+      -8.484005783096581,
+      3.509094342010273
+    ],
+    "M17": [
+      -4.206876552520822,
+      3.5485685954930655
+    ],
+    "M19": [
+      4.2035466567971245,
+      3.4595013362257037
+    ],
+    "M20": [
+      8.44827031680254,
+      3.3527540592016027
+    ],
+    "M21": [
+      -8.58138492874836,
+      6.73953381295488
+    ],
+    "M22": [
+      -3.517100836073049,
+      7.209221831861397
+    ],
+    "M23": [
+      -0.10671909707024722,
+      7.471531026132129
+    ],
+    "M24": [
+      4.227505662608714,
+      7.076566101142719
+    ],
+    "M25": [
+      8.428047291557876,
+      7.157182534311546
+    ]
+  },
+  "raw": {
+    "hubs": [
+      "M06",
+      "M13",
+      "M24"
+    ],
+    "hubs_stable": false,
+    "added": [
+      "M24"
+    ],
+    "removed": [
+      "M20"
+    ],
+    "cost_resident_minutes": 2733341.896977118,
+    "mean_minutes": 8.364931959582565,
+    "p95_minutes": 15.709433702495225,
+    "cost_excess_pct": 11.555694491984013,
+    "cost_bound_excess_pct": 11.555694491984013,
+    "p95_delta_pct": 16.837074745322166,
+    "max_solver_gap": 1.0,
+    "method_seconds_median": 24.138077599927783,
+    "routing_inclusive_seconds_median": 24.686684099957347,
+    "runs": [
+      {
+        "hubs": [
+          "M06",
+          "M13",
+          "M24"
+        ],
+        "cost_resident_minutes": 2733341.896977118,
+        "mean_minutes": 8.364931959582565,
+        "p95_minutes": 15.709433702495225,
+        "solver_gap": 1.0,
+        "solver_status": 1,
+        "model_dual_bound": 0.0,
+        "method_seconds": 23.4168988999445,
+        "routing_inclusive_seconds": 23.873071699868888
+      },
+      {
+        "hubs": [
+          "M10",
+          "M20",
+          "M24"
+        ],
+        "cost_resident_minutes": 3510518.6420618584,
+        "mean_minutes": 10.743350334683527,
+        "p95_minutes": 19.18858056796083,
+        "solver_gap": 1.0,
+        "solver_status": 1,
+        "model_dual_bound": 0.0,
+        "method_seconds": 24.244859700091183,
+        "routing_inclusive_seconds": 24.69929220015183
+      },
+      {
+        "hubs": [
+          "M09",
+          "M11",
+          "M24"
+        ],
+        "cost_resident_minutes": 2866740.9475394553,
+        "mean_minutes": 8.773177259104349,
+        "p95_minutes": 13.407308681511992,
+        "solver_gap": 1.0,
+        "solver_status": 1,
+        "model_dual_bound": 0.0,
+        "method_seconds": 24.138077599927783,
+        "routing_inclusive_seconds": 24.686684099957347
+      }
+    ]
+  },
+  "exhaustive": {
+    "triples": 2024,
+    "cost_resident_minutes": 2450203.8281636317,
+    "model_dual_bound": 2450203.8281636317,
+    "hubs": [
+      "M06",
+      "M13",
+      "M20"
+    ],
+    "p95_minutes": 13.445589712630312,
+    "mean_minutes": 7.498435644792331,
+    "enumeration_seconds": 0.12259520008228719,
+    "routing_inclusive_seconds": 0.5787680000066757
+  },
+  "budgets": [
+    {
+      "resolution": 6,
+      "bucket_count": 18,
+      "methods": {
+        "fixed": {
+          "hubs": [
+            "M07",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [
+            "M07"
+          ],
+          "removed": [
+            "M06"
+          ],
+          "cost_resident_minutes": 2519287.0187013303,
+          "mean_minutes": 7.7098531001197514,
+          "p95_minutes": 13.702778663519446,
+          "cost_excess_pct": 2.8194874950250526,
+          "cost_bound_excess_pct": 2.8194874950250526,
+          "p95_delta_pct": 1.9128127243652315,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.036793299950659275,
+          "routing_inclusive_seconds_median": 0.4954344998113811,
+          "runs": [
+            {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2317063.670363774,
+              "method_seconds": 0.039261699886992574,
+              "routing_inclusive_seconds": 0.4954344998113811
+            },
+            {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2317063.670363774,
+              "method_seconds": 0.036793299950659275,
+              "routing_inclusive_seconds": 0.491225800011307
+            },
+            {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2317063.670363774,
+              "method_seconds": 0.03627149993553758,
+              "routing_inclusive_seconds": 0.5848779999651015
+            }
+          ]
+        },
+        "adaptive_spread": {
+          "hubs": [
+            "M07",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [
+            "M07"
+          ],
+          "removed": [
+            "M06"
+          ],
+          "cost_resident_minutes": 2519287.0187013303,
+          "mean_minutes": 7.7098531001197514,
+          "p95_minutes": 13.702778663519446,
+          "cost_excess_pct": 2.8194874950250526,
+          "cost_bound_excess_pct": 2.8194874950250526,
+          "p95_delta_pct": 1.9128127243652315,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.05919190007261932,
+          "routing_inclusive_seconds_median": 0.5153646999970078,
+          "runs": [
+            {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2317063.670363774,
+              "method_seconds": 0.05919190007261932,
+              "routing_inclusive_seconds": 0.5153646999970078
+            },
+            {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2317063.670363774,
+              "method_seconds": 0.05756759992800653,
+              "routing_inclusive_seconds": 0.5120000999886543
+            },
+            {
+              "hubs": [
+                "M07",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2519287.0187013303,
+              "mean_minutes": 7.7098531001197514,
+              "p95_minutes": 13.702778663519446,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2317063.670363774,
+              "method_seconds": 0.059889999916777015,
+              "routing_inclusive_seconds": 0.6084964999463409
+            }
+          ]
+        },
+        "kmeans": {
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [],
+          "removed": [],
+          "cost_resident_minutes": 2450203.8281636317,
+          "mean_minutes": 7.498435644792331,
+          "p95_minutes": 13.445589712630312,
+          "cost_excess_pct": 0.0,
+          "cost_bound_excess_pct": 0.0,
+          "p95_delta_pct": 0.0,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.18955230014398694,
+          "routing_inclusive_seconds_median": 0.7379880999214947,
+          "runs": [
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2341510.634477141,
+              "method_seconds": 0.3352502998895943,
+              "routing_inclusive_seconds": 0.7914230998139828
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2341510.634477141,
+              "method_seconds": 0.18955230014398694,
+              "routing_inclusive_seconds": 0.6439848002046347
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2341510.634477141,
+              "method_seconds": 0.18938159989193082,
+              "routing_inclusive_seconds": 0.7379880999214947
+            }
+          ]
+        },
+        "adaptive_volume": {
+          "hubs": [
+            "M07",
+            "M10",
+            "M14"
+          ],
+          "hubs_stable": true,
+          "added": [
+            "M07",
+            "M10",
+            "M14"
+          ],
+          "removed": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "cost_resident_minutes": 2479886.2194489865,
+          "mean_minutes": 7.589273598059097,
+          "p95_minutes": 13.196627699727246,
+          "cost_excess_pct": 1.2114253901725824,
+          "cost_bound_excess_pct": 1.2114253901725824,
+          "p95_delta_pct": -1.851625835862003,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.055750499945133924,
+          "routing_inclusive_seconds_median": 0.5132782000582665,
+          "runs": [
+            {
+              "hubs": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "cost_resident_minutes": 2479886.2194489865,
+              "mean_minutes": 7.589273598059097,
+              "p95_minutes": 13.196627699727246,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2024111.460339547,
+              "method_seconds": 0.05426050000824034,
+              "routing_inclusive_seconds": 0.5104332999326289
+            },
+            {
+              "hubs": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "cost_resident_minutes": 2479886.2194489865,
+              "mean_minutes": 7.589273598059097,
+              "p95_minutes": 13.196627699727246,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2024111.460339547,
+              "method_seconds": 0.058845699997618794,
+              "routing_inclusive_seconds": 0.5132782000582665
+            },
+            {
+              "hubs": [
+                "M07",
+                "M10",
+                "M14"
+              ],
+              "cost_resident_minutes": 2479886.2194489865,
+              "mean_minutes": 7.589273598059097,
+              "p95_minutes": 13.196627699727246,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2024111.460339547,
+              "method_seconds": 0.055750499945133924,
+              "routing_inclusive_seconds": 0.6043569999746978
+            }
+          ]
+        }
+      },
+      "decision": {
+        "twice_as_fast_as_raw": true,
+        "within_one_percent_of_raw_cost": false,
+        "within_five_percent_of_raw_p95": true,
+        "advantage_over_fixed": false,
+        "advantage_over_kmeans": false,
+        "continue": false
+      },
+      "decision_vs_exact_raw": {
+        "twice_as_fast_as_raw": false,
+        "within_one_percent_of_raw_cost": false,
+        "within_five_percent_of_raw_p95": true,
+        "advantage_over_fixed": false,
+        "advantage_over_kmeans": false,
+        "continue": false
+      }
+    },
+    {
+      "resolution": 7,
+      "bucket_count": 83,
+      "methods": {
+        "fixed": {
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [],
+          "removed": [],
+          "cost_resident_minutes": 2450203.8281636317,
+          "mean_minutes": 7.498435644792331,
+          "p95_minutes": 13.445589712630312,
+          "cost_excess_pct": 0.0,
+          "cost_bound_excess_pct": 0.0,
+          "p95_delta_pct": 0.0,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.09761269995942712,
+          "routing_inclusive_seconds_median": 0.5589294000528753,
+          "runs": [
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2408098.111857497,
+              "method_seconds": 0.0954538001678884,
+              "routing_inclusive_seconds": 0.5516266000922769
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2408098.111857497,
+              "method_seconds": 0.10449689999222755,
+              "routing_inclusive_seconds": 0.5589294000528753
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2408098.111857497,
+              "method_seconds": 0.09761269995942712,
+              "routing_inclusive_seconds": 0.646219199988991
+            }
+          ]
+        },
+        "adaptive_spread": {
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [],
+          "removed": [],
+          "cost_resident_minutes": 2450203.8281636317,
+          "mean_minutes": 7.498435644792331,
+          "p95_minutes": 13.445589712630312,
+          "cost_excess_pct": 0.0,
+          "cost_bound_excess_pct": 0.0,
+          "p95_delta_pct": 0.0,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.2168717000167817,
+          "routing_inclusive_seconds_median": 0.6730444999411702,
+          "runs": [
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2415360.6374847,
+              "method_seconds": 0.2168717000167817,
+              "routing_inclusive_seconds": 0.6730444999411702
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2415360.6374847,
+              "method_seconds": 0.21639580000191927,
+              "routing_inclusive_seconds": 0.670828300062567
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2415360.6374847,
+              "method_seconds": 0.24441749998368323,
+              "routing_inclusive_seconds": 0.7930240000132471
+            }
+          ]
+        },
+        "kmeans": {
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [],
+          "removed": [],
+          "cost_resident_minutes": 2450203.8281636317,
+          "mean_minutes": 7.498435644792331,
+          "p95_minutes": 13.445589712630312,
+          "cost_excess_pct": 0.0,
+          "cost_bound_excess_pct": 0.0,
+          "p95_delta_pct": 0.0,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.5954353997949511,
+          "routing_inclusive_seconds_median": 1.0516081997193396,
+          "runs": [
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2380008.862912448,
+              "method_seconds": 0.5954353997949511,
+              "routing_inclusive_seconds": 1.0516081997193396
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2380008.862912448,
+              "method_seconds": 0.5892594000324607,
+              "routing_inclusive_seconds": 1.0436919000931084
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2380008.862912448,
+              "method_seconds": 0.6061172001063824,
+              "routing_inclusive_seconds": 1.1547237001359463
+            }
+          ]
+        },
+        "adaptive_volume": {
+          "hubs": [
+            "M06",
+            "M13",
+            "M20"
+          ],
+          "hubs_stable": true,
+          "added": [],
+          "removed": [],
+          "cost_resident_minutes": 2450203.8281636317,
+          "mean_minutes": 7.498435644792331,
+          "p95_minutes": 13.445589712630312,
+          "cost_excess_pct": 0.0,
+          "cost_bound_excess_pct": 0.0,
+          "p95_delta_pct": 0.0,
+          "max_solver_gap": 0.0,
+          "method_seconds_median": 0.14975650003179908,
+          "routing_inclusive_seconds_median": 0.6096886999439448,
+          "runs": [
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2410148.1787339193,
+              "method_seconds": 0.15351590001955628,
+              "routing_inclusive_seconds": 0.6096886999439448
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2410148.1787339193,
+              "method_seconds": 0.14975650003179908,
+              "routing_inclusive_seconds": 0.6041890000924468
+            },
+            {
+              "hubs": [
+                "M06",
+                "M13",
+                "M20"
+              ],
+              "cost_resident_minutes": 2450203.8281636317,
+              "mean_minutes": 7.498435644792331,
+              "p95_minutes": 13.445589712630312,
+              "solver_gap": 0.0,
+              "solver_status": 0,
+              "model_dual_bound": 2410148.1787339193,
+              "method_seconds": 0.14664599997922778,
+              "routing_inclusive_seconds": 0.6952525000087917
+            }
+          ]
+        }
+      },
+      "decision": {
+        "twice_as_fast_as_raw": true,
+        "within_one_percent_of_raw_cost": true,
+        "within_five_percent_of_raw_p95": true,
+        "advantage_over_fixed": false,
+        "advantage_over_kmeans": true,
+        "continue": false
+      },
+      "decision_vs_exact_raw": {
+        "twice_as_fast_as_raw": false,
+        "within_one_percent_of_raw_cost": true,
+        "within_five_percent_of_raw_p95": true,
+        "advantage_over_fixed": false,
+        "advantage_over_kmeans": true,
+        "continue": false
+      }
+    }
+  ]
+}
